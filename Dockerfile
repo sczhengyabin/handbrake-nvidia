@@ -18,7 +18,7 @@ WORKDIR /opt
 RUN git clone --branch 1.11.1 --depth=1 https://github.com/HandBrake/HandBrake.git
 
 WORKDIR /opt/HandBrake
-RUN ./configure --launch-jobs=$(nproc) --launch --disable-gtk --enable-nvdec -–enable-qsv
+RUN ./configure --launch-jobs=$(nproc) --launch --disable-gtk --enable-nvdec --enable-qsv
 
 WORKDIR /work
 ENTRYPOINT ["/opt/HandBrake/build/HandBrakeCLI"]
