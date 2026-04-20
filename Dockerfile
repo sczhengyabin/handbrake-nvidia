@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /opt
-RUN git clone --depth=1 https://github.com/HandBrake/HandBrake.git
+RUN git clone --branch 1.11.1 --depth=1 https://github.com/HandBrake/HandBrake.git
 
 WORKDIR /opt/HandBrake
 RUN ./configure --launch-jobs=$(nproc) --launch --disable-gtk --enable-nvdec -–enable-qsv
